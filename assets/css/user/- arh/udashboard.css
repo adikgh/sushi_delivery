@@ -1,0 +1,256 @@
+/*  */
+.utop_ic{background:var(--wh)}
+
+
+
+
+
+
+
+/*  */
+.ud_top{
+   position: relative;
+   width: 100%;
+}
+@media(max-width:768px){.ud_top{padding-top:100px}}
+.ud_top_n{
+   position: relative;
+   width: 100%;
+   max-width: 480px;
+}
+.ud_top_c{
+   position: relative;
+   width: 100%;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+}
+.ud_top_ic{
+   position: relative;
+   width: 54px;
+   height: 54px;
+   border-radius: 50%;
+   background: var(--cm1);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.ud_top_ic div{
+   position: relative;
+   margin-top: 5px;
+   width: 50px;
+   height: 50px;
+   background-size: auto 100%;
+   background-position: center center;
+   background-repeat: no-repeat;
+}
+
+
+.ud_top_in{
+   position: relative;
+   width: calc(100% - 54px - 20px);
+   margin-left: 20px;
+}
+.ud_top_p{
+   position: relative;
+   width: 100%;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+}
+.ud_top_h{
+   position: relative;
+   width: 100%;
+   font-weight: 500;
+   font-size: 24px;
+   height: 28px;
+   line-height: 28px;
+   overflow: hidden;
+   transition: var(--tm);
+   white-space: nowrap;
+   text-overflow: ellipsis;
+
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+}
+.ud_top_h div{
+   position: relative;
+   margin-left: 10px;
+   width: 18px;
+   height: 18px;
+   background-position: center center;
+   background-size: 100% auto;
+   background-repeat: no-repeat;
+}
+
+.ud_top_b{
+   position: relative;
+   width: 100%;
+   margin-top: 15px;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.ud2{
+   position: relative;
+   width: 100%;
+}
+.ud2_c{
+   position: relative;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   flex-wrap: wrap;
+}
+.ud2_i{
+   position: relative;
+   width: calc(50% - 15px);
+   background: var(--wh);
+   border-radius: 20px;
+   -webkit-box-shadow: 4px 10px 84px rgb(0 0 0 / 5%);
+	box-shadow: 4px 10px 84px rgb(0 0 0 / 5%);
+   display: flex;
+   justify-content: space-between;
+   align-items: stretch;
+   flex-wrap: wrap;
+   padding: 30px;
+   margin-bottom: 30px;
+}
+@media(max-width:768px){.ud2_i{width:100%}}
+
+.ud2_il{
+   position: relative;
+   width: 74px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+}
+@media(max-width:390px){
+   .ud2_il{
+      position: absolute;
+      bottom: calc(54px + 30px + 30px);
+      left: 30px;
+      height: calc(74px + 20px);
+      justify-content: flex-start;
+   }
+}
+
+.ud2_ilb{
+   width: 100%;
+   height: 54px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 20px;
+   font-weight: 600;
+   color: var(--cm);
+}
+@media(max-width:390px){.ud2_ilb{font-size:16px}}
+
+.ud2_ilt{position:relative}
+.ud2_ilta{
+   position: absolute;
+   top: 0;
+   left: -1px;
+   bottom: 3.5px;
+   right: 0;
+   margin: auto;
+   width: 44px;
+   height: 44px;
+   border-radius: 50%;
+   overflow: hidden;
+}
+.ud2_ilta div{
+   position: relative;
+   width: 100%;
+   height: 100%;
+   background-size: auto 100%;
+   background-position: center center;
+   background-repeat: no-repeat;
+}
+
+
+.ud2_ir{
+   position: relative;
+   width: calc(100% - 74px - 20px);
+}
+@media(max-width:390px){.ud2_ir{width:100%}}
+
+.ud2_in{
+   position: relative;
+   width: 100%;
+   font-size: 18px;
+   font-weight: 600;
+}
+.ud2_ic{
+   position: relative;
+   width: 100%;
+   margin-top: 20px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+}
+.ud2_ici{
+   position: relative;
+   width: calc(50% - 5px);
+   margin-bottom: 10px;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+}
+@media(max-width:390px){
+   .ud2_ici{
+      width: 100%;
+      padding-left: calc(74px + 30px);
+   }
+}
+
+.ud2_ici i{
+   width: 12px;
+   height: 12px;
+   font-size: 12px;
+   margin-right: 10px;
+   transform: translateY(1px);
+}
+.ud2_ici span{font-size:14px}
+@media(max-width:480px){
+   .ud2_ici i{
+      font-size: 10px;
+      margin-right: 5px;
+      transform: translateY(2px);
+   }
+   .ud2_ici span{font-size:11px}
+}
+@media(max-width:390px){
+   .ud2_ici i{
+      font-size: 12px;
+      margin-right: 10px;
+      transform: translateY(1px);
+   }
+   .ud2_ici span{font-size:14px}
+}
+
+
+.ud2_ib{
+   position: relative;
+   display: block;
+   width: 100%;
+   margin-top: 15px;
+}
+.ud2_ib .btn{width:100%}

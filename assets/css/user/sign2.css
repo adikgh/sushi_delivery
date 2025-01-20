@@ -1,0 +1,91 @@
+/*  */
+.app, .app_body{
+   padding: 0;
+}
+/* .bl_c{} */
+
+.navh{
+   top: 0;
+   height: 64px;
+   border-top: 0;
+   position: fixed;
+}
+
+
+
+
+/*  */
+.btn{
+   height: 54px;
+}
+
+
+
+
+
+
+/*  */
+.usign{
+	position: relative;
+	width: 100%;
+}
+.usign_c{
+   position: relative;
+	width: 100%;
+}
+.head_c{
+   position: relative;
+   max-width: 500px;
+   margin: 0 auto;
+   margin-bottom: 80px;
+}
+
+
+
+
+
+.usign_c2{
+   position: relative;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.usign_cn{
+	position: relative;
+	width: 100%;
+   max-width: 500px;
+}
+
+.si_blc_bn{
+   position: relative;
+   width: 100%;
+   margin-top: 40px;
+}
+.si_blc_bn .btn{
+   width: auto;
+   justify-content: flex-start;
+}
+
+.form_im_btn{
+   margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  */

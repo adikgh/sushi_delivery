@@ -1,0 +1,11 @@
+/*  */
+@media (max-width: 500px) {
+   .body_user .header{display:none}
+   .header_c .header_serach{display:none}
+   .navh{display:none}
+   .body_user .navh{display:block}
+   .footer{display:none}
+
+   .app_body{padding-top:64px}
+   .app_body{padding-bottom:64px}
+}

@@ -1,0 +1,2 @@
+                        <? if ($type != 'return' && $buy_d['returned'] != 1): ?> <div class="uc_uin_cn btn_return_sn" data-id="<?=$buy_d['id']?>"><i class="fal fa-undo-alt"></i></div> <? endif ?>
+                        <? if ($buy_d['returned'] == 1): ?> <div class=""></div> <? endif ?>

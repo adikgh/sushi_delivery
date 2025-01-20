@@ -1,0 +1,13 @@
+.uhead{position:sticky}
+@media(max-width:500px){.uhead{position:fixed}}
+
+.uitemc_u{
+   position: relative;
+   top: 0;
+   z-index: 9;
+}
+.uitemc_u_act{border-bottom-color: var(--tr)}
+.uitemc_u_act .uitemc_um{
+	border-color: var(--gr3);
+	padding: 0 25px;
+}

@@ -1,0 +1,94 @@
+/*  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  */
+.price1_bl, .setting1_bl, .info1_bl{
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-top: 0;
+	transition: .3s;
+   visibility: hidden;
+	opacity: 0;
+   overflow: hidden;
+}
+.price1_bl_act, .setting1_bl_act, .info1_bl_act{
+	padding-top: 10px;
+	height: 195px;
+	opacity: 1;
+   visibility: visible;
+   overflow: unset;
+}
+.info1_bl_act{height:298px}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  */
+
+
+.upl_logo_img_del::after{
+	content: 'Өшіру';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--wh7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: .3s;
+	opacity: 0;
+}
+.upl_logo_img_del:hover::after{
+	opacity: 1;
+}

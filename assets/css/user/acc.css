@@ -1,0 +1,20 @@
+/*  */
+@media (max-width: 500px) {
+   .header{display:none}
+   .footer{display:none}
+   .body_user .app_body{
+      padding-bottom: 64px;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+

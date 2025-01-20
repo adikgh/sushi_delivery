@@ -1,0 +1,144 @@
+/*  */
+.app{
+   /* padding-top: 84px; */
+   /* padding-bottom: 60px; */
+}
+
+
+
+
+
+
+.uc_u{
+   position: relative;
+   width: 100%;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 15px;
+   padding: 15px 0; 
+}
+@media (max-width: 500px) {
+   .uc_u{
+      grid-template-columns: repeat(1, 1fr);
+      gap: 10px;
+      padding: 10px 0; 
+   }
+}
+
+
+.uc_ui{
+   position: relative;
+   width: 100%;
+   background: var(--wh);
+   padding: 12px 10px;
+   border-radius: 8px;
+}
+
+
+.uc_uil2_date{
+   position: relative;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding-top: 10px;
+   font-size: 16px;
+}
+
+
+
+.uc_uil2_nmb{
+   position: relative;
+   width: 64px;
+   height: 64px;
+   background: var(--cm);
+   border-radius: 8px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 20px;
+   font-weight: 700;
+   color: var(--wh);
+}
+.uc_uil2_raz{
+   margin-top: 15px;
+   padding-top: 15px;
+   border-top: 1px solid var(--gr2);
+}
+
+
+.uc_uil2_trt{
+   position: relative;
+   width: 100%;
+
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   margin-bottom: 5px;
+}
+.uc_uil2_trt1, .uc_uil2_trt2, .uc_uil2_trt3{
+   font-size: 12px;
+}
+.uc_uil2_trt1{
+   width: 50%;
+}
+.uc_uil2_trt2{
+   width: 15%;
+   text-align: center;
+}
+.uc_uil2_trt3{
+   width: 35%;
+   text-align: right;
+}
+
+.uc_uil2_trc{
+   margin-top: 10px;
+}
+.uc_uil2_trc .uc_uil2_trt1, .uc_uil2_trc .uc_uil2_trt2, .uc_uil2_trc .uc_uil2_trt3{
+   font-size: 14px;
+}
+
+
+.uc_uil2_trb{
+   position: relative;
+   width: 100%;
+   margin-top: 10px;
+
+   display: flex;
+   justify-content: space-between;
+   align-items: stretch;
+}
+.uc_uil2_trb .uc_uil2_trt1, .uc_uil2_trb .uc_uil2_trt3{
+   font-size: 16px;
+   font-weight: 700;
+   padding-top: 10px;
+}
+.uc_uil2_trb .uc_uil2_trt2, .uc_uil2_trb .uc_uil2_trt3{
+   border-top: 1px solid var(--gr2);
+   padding-top: 10px;
+}
+
+.uc_uil2_mi{
+   width: 100%;
+}
+.uc_uil2_mi1{
+   display: inline;
+   font-size: 16px;
+}
+.uc_uil2_mi2{
+   display: inline;
+   font-size: 16px;
+   font-weight: 700;
+}
+.uc_uil2_mib{
+   margin-top: 10px;
+   display: flex;
+   justify-content: space-between;
+}
+.uc_uil2_mib .btn{
+   width: calc(50% - 5px);
+}
+.uc_uil2_mib1 .btn{
+   width: 100%;
+}
