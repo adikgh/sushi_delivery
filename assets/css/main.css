@@ -1311,7 +1311,10 @@
 	border-radius: 16px;
 }
 @media (max-width: 500px) {
-	.usign_c{}
+	.usign_c{
+		padding: 0;
+		border-radius: 0;
+	}
 }
 
 

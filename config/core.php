@@ -57,13 +57,13 @@
    $core = new core;
    $user = core::$user_data;
    $user_id = @$user['id'];
-   $user_right = fun::user_staffw($user_id);
+   $user_right = fun::user_staff($user_id);
 
 
 
    // setting
    $site = mysqli_fetch_array(db::query("select * from `site` where id = 1"));
-   $ver = 1.01;
+   $ver = 1.011;
 
    // 
    $site_set = [
