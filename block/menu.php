@@ -12,7 +12,7 @@
 				</a>
 			<? endif ?>
 			<? if ($user_right['positions_id'] == 3 || $user_right['positions_id'] == 2 || $user_right['positions_id'] == 1): ?>
-				<a class="pmenu_i txt_c <?=($menu_name=='orders'?'pmenu_i_act':'')?>" href="/orders/">
+				<a class="pmenu_i txt_c <?=($menu_name=='orders'?'pmenu_i_act':'')?>" href="/orders/list.php">
 					<i class="far fa-list-ol"></i>
 					<span>Тапсырыстар</span>
 				</a>
