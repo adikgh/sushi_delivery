@@ -144,11 +144,16 @@
 												<div class="uc_uil2_trt1">Доставка</div>
 												<div class="uc_uil2_trt3 fr_price"><?=$buy_d['pay_delivery']?></div>
 											</div>
+											<div class="uc_uil2_trt">
+												<div class="uc_uil2_trt1">Предоплата</div>
+												<div class="uc_uil2_trt2">-</div>
+												<div class="uc_uil2_trt3 fr_price"><?=$buy_d['pay_qr']?></div>
+											</div>
 										</div>
 										<div class="uc_uil2_trb">
-											<div class="uc_uil2_trt1">Жалпы</div>
+											<div class="uc_uil2_trt1">К оплате</div>
 											<div class="uc_uil2_trt2"></div>
-											<div class="uc_uil2_trt3 fr_price"><?=$buy_d['total']?></div>
+											<div class="uc_uil2_trt3 fr_price"><?=$buy_d['total'] - $buy_d['pay_qr']?></div>
 										</div>
 									</div>
 									<? if ($buy_d['address']): ?>
@@ -158,7 +163,7 @@
 												<div class="uc_uil2_mi2"><?=$buy_d['address']?></div>
 											</div>
 											<div class="uc_uil2_mib uc_uil2_mib1">
-												<div class="btn btn_cl">Картадан ашу</div>
+												<a class="btn btn_cl" href="https://2gis.ru/shymkent/search/<?=$buy_d['address']?>" target="_blank">Картадан ашу</a>
 											</div>
 										</div>
 									<? endif ?>
@@ -170,7 +175,7 @@
 											</div>
 											<div class="uc_uil2_mib">
 												<a class="btn btn_phone" href="tel:8<?=$buy_d['phone']?>">Званок</a>
-												<a class="btn btn_whatsapp" href="https://wa.me/<?=$buy_d['phone']?>">Whatsapp</a>
+												<a class="btn btn_whatsapp" href="https://wa.me/<?=$buy_d['phone']?>" target="_blank">Whatsapp</a>
 											</div>
 										</div>
 									<? endif ?>
