@@ -166,10 +166,10 @@
 										<div class="uc_uil2_raz">
 											<div class="uc_uil2_mi">
 												<div class="uc_uil2_mi1">Номер:</div>
-												<div class="uc_uil2_mi2"><?=$buy_d['phone']?></div>
+												<div class="uc_uil2_mi2 fr_phone"><?=$buy_d['phone']?></div>
 											</div>
 											<div class="uc_uil2_mib">
-												<a class="btn btn_phone" href="tel:<?=$buy_d['phone']?>">Званок</a>
+												<a class="btn btn_phone" href="tel:8<?=$buy_d['phone']?>">Званок</a>
 												<a class="btn btn_whatsapp" href="https://wa.me?tel=<?=$buy_d['phone']?>">Whatsapp</a>
 											</div>
 										</div>
