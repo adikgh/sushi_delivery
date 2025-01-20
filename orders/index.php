@@ -152,13 +152,13 @@
 											<div class="uc_uil2_trt3 fr_price"><?=$buy_d['total']?></div>
 										</div>
 									</div>
-									<? if ($buy_d['address'] || $buy_d['address'] != "Место" || $buy_d['address'] != "место"): ?>
+									<? if ($buy_d['address'] != '' || $buy_d['address'] != "Место" || $buy_d['address'] != "место"): ?>
 										<div class="uc_uil2_raz">
 											<div class="uc_uil2_mi">
 												<div class="uc_uil2_mi1">Адрес:</div>
 												<div class="uc_uil2_mi2"><?=$buy_d['address']?></div>
 											</div>
-											<? if ($buy_d['address'] == "Место" || $buy_d['address'] == "место"): ?>
+											<? if ($buy_d['address'] != "Место" || $buy_d['address'] != "место"): ?>
 												<div class="uc_uil2_mib uc_uil2_mib1">
 													<div class="btn btn_cl">Картадан ашу</div>
 												</div>
