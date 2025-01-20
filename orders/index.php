@@ -103,13 +103,12 @@
 
 							<div class="uc_ui">
 								<div class="uc_uil2" >
-									<div class="">
+									<div class="uc_uil2_top">
 										<div class="uc_uil2_nmb"><?=$buy_d['number']?></div>
-										<div class=""><?=$buy_d['name']?></div>
-									</div>
-									<div class="uc_uil2_date">
-										<div class=""><?=date("Y-m-d", strtotime($buy_d['ins_dt']))?></div>
-										<div class=""><?=date("H:i", strtotime($buy_d['ins_dt']))?></div>
+										<div class="uc_uil2_date">
+											<div class=""><?=date("Y-m-d", strtotime($buy_d['ins_dt']))?></div>
+											<div class=""><?=date("H:i", strtotime($buy_d['ins_dt']))?></div>
+										</div>
 									</div>
 									<div class="uc_uil2_raz">
 										<div class="uc_uil2_trt">
@@ -170,8 +169,8 @@
 												<div class="uc_uil2_mi2"><?=$buy_d['phone']?></div>
 											</div>
 											<div class="uc_uil2_mib">
-												<a class="btn btn_phone" href="#<?=$buy_d['phone']?>">Званок</a>
-												<a class="btn btn_whatsapp" href="#<?=$buy_d['phone']?>">Whatsapp</a>
+												<a class="btn btn_phone" href="tel:<?=$buy_d['phone']?>">Званок</a>
+												<a class="btn btn_whatsapp" href="https://wa.me?tel=<?=$buy_d['phone']?>">Whatsapp</a>
 											</div>
 										</div>
 									<? endif ?>

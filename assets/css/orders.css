@@ -35,14 +35,21 @@
 }
 
 
-.uc_uil2_date{
+
+.uc_uil2_top{
    position: relative;
    width: 100%;
    display: flex;
-   align-items: center;
    justify-content: space-between;
-   padding-top: 10px;
+   align-items: center;
+}
+.uc_uil2_date{
+   position: relative;
+   width: calc(100% - 64px - 15px);
    font-size: 16px;
+}
+.uc_uil2_date div:last-child{
+   margin-top: 7px;
 }
 
 
