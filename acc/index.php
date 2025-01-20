@@ -1,4 +1,4 @@
-<?php include "../config/core.php";
+<? include "../config/core.php";
 
 	// 
 	if (!$user_id) header('location: /');
@@ -11,8 +11,11 @@
 ?>
 <? include "../block/header.php"; ?>
 
-	<div class="">
-
+	<div class="bl_c">
+		<div class="onj">
+			<a class="btn btn_cl" href="/exit.php">Шығу</a>
+		</div>
 	</div>
+
 
 <? include "../block/footer.php"; ?>

@@ -40,8 +40,9 @@ $(document).ready(function() {
 
    // 
 	$('.on_staff').on('change', function () {
-      // id = $(this).children('option:selected').attr('data-id')
 		btn = $(this)
+      text = btn.children('option:selected').html()
+
       $.ajax({
          url: "/orders/get.php?change_staff",
          type: "POST",
@@ -51,7 +52,10 @@ $(document).ready(function() {
             order_id: btn.attr('data-order-id'),
          }),
          success: function(data){ 
-            // if (data == 'yes') location.reload();
+            if (data == 'yes') {
+               // location.reload();
+               btn.parents('.uc_uil2_sel').siblings('.uc_uil2_mi').children('.uc_uil2_mi2').html(text)
+            }
             console.log(data);
          },
          beforeSend: function(){ },

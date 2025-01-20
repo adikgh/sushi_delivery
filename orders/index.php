@@ -2,7 +2,7 @@
 
 	// 
 	if (!$user_id) header('location: /');
-
+	if ($user_right['positions_id'] == 1) header('location: /orders/list.php');
 
 
    	$type = @$_GET['type'];

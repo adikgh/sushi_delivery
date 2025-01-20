@@ -2564,3 +2564,35 @@ textarea.form_txt{
 .calcn2{
 	width: calc(74px * 2 + 2px);
 }
+
+
+
+
+
+.onj{
+	position: relative;
+	width: 100%;
+	padding-top: 20px;
+}
+.onj .btn{
+	width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+.uc_uil2_sel{
+	position: relative;
+	width: 100%;
+	margin-top: 10px;
+}
+.uc_uil2_sel select{
+	width: 100%;
+	border: 1px solid var(--cl);
+}

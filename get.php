@@ -24,7 +24,7 @@
 		$user = db::query("SELECT * FROM user WHERE `phone` = '$phone' and `password` = '$password' and `right` = 1");
 		if (mysqli_num_rows($user)) {
 			$user_d = mysqli_fetch_array($user);
-			$user_staff = fun::user_staff($user_d['id']);
+			$user_staff = fun::user_staffw($user_d['id']);
 			if ($user_staff['positions_id'] == 6 || $user_staff['positions_id'] == 3 || $user_staff['positions_id'] == 2 || $user_staff['positions_id'] == 1) {
 				$_SESSION['uph'] = $phone;
 				$_SESSION['ups'] = $password;
