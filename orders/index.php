@@ -152,25 +152,32 @@
 											<div class="uc_uil2_trt3 fr_price"><?=$buy_d['total']?></div>
 										</div>
 									</div>
-									<div class="uc_uil2_raz">
-										<div class="uc_uil2_mi">
-											<div class="uc_uil2_mi1">Адрес:</div>
-											<div class="uc_uil2_mi2"><?=$buy_d['address']?></div>
+									<? if ($buy_d['address'] || $buy_d['address'] != "Место" || $buy_d['address'] != "место"): ?>
+										<div class="uc_uil2_raz">
+											<div class="uc_uil2_mi">
+												<div class="uc_uil2_mi1">Адрес:</div>
+												<div class="uc_uil2_mi2"><?=$buy_d['address']?></div>
+											</div>
+											<? if ($buy_d['address'] == "Место" || $buy_d['address'] == "место"): ?>
+												<div class="uc_uil2_mib uc_uil2_mib1">
+													<div class="btn btn_cl">Картадан ашу</div>
+												</div>
+											<? endif ?>
+
 										</div>
-										<div class="uc_uil2_mib uc_uil2_mib1">
-											<div class="btn btn_cl">Картадан ашу</div>
+									<? endif ?>
+									<? if ($buy_d['phone']): ?>
+										<div class="uc_uil2_raz">
+											<div class="uc_uil2_mi">
+												<div class="uc_uil2_mi1">Номер:</div>
+												<div class="uc_uil2_mi2"><?=$buy_d['phone']?></div>
+											</div>
+											<div class="uc_uil2_mib">
+												<a class="btn btn_phone" href="#<?=$buy_d['phone']?>">Званок</a>
+												<a class="btn btn_whatsapp" href="#<?=$buy_d['phone']?>">Whatsapp</a>
+											</div>
 										</div>
-									</div>
-									<div class="uc_uil2_raz">
-										<div class="uc_uil2_mi">
-											<div class="uc_uil2_mi1">Номер:</div>
-											<div class="uc_uil2_mi2"><?=$buy_d['phone']?></div>
-										</div>
-										<div class="uc_uil2_mib">
-											<a class="btn btn_phone">Званок</a>
-											<a class="btn btn_whatsapp">Whatsapp</a>
-										</div>
-									</div>
+									<? endif ?>
 
 									<!-- <div class="uc_uin_other fr_price"><?=$buy_d['pay_qr']?> </div> -->
 									<!-- <div class="uc_uin_other fr_price"><?=$buy_d['total'] - $buy_d['pay_qr']?></div> -->
