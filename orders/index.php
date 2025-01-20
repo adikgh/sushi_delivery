@@ -74,7 +74,7 @@
 	// } else 
 	
 
-	$start_cdate = '2025-01-15';
+	$start_cdate = '2025-01-19';
 
 	$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and branch_id = '$branch' and `order_status` = 1 order by number asc");
 
