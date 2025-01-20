@@ -37,6 +37,25 @@ $(document).ready(function() {
       })
 	})
 
+	// 
+	$('.on_check').on('click', function () {
+		btn = $(this)
+      $.ajax({
+         url: "/orders/get.php?check",
+         type: "POST",
+         dataType: "html",
+         data: ({ id: btn.data('id'), }),
+         success: function(data){ 
+            if (data == 'yes') {
+               btn.parents('.uc_ui').remove()
+            }
+            console.log(data);
+         },
+         beforeSend: function(){ },
+         error: function(data){ }
+      })
+	})
+
 
    // 
 	$('.on_staff').on('change', function () {

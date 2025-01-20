@@ -12,9 +12,13 @@
 				</a>
 			<? endif ?>
 			<? if ($user_right['positions_id'] == 3 || $user_right['positions_id'] == 2 || $user_right['positions_id'] == 1): ?>
-				<a class="pmenu_i txt_c <?=($menu_name=='orders'?'pmenu_i_act':'')?>" href="/orders/list.php">
+				<a class="pmenu_i txt_c <?=($menu_name=='new'?'pmenu_i_act':'')?>" href="/orders/list.php?sort=new">
 					<i class="far fa-list-ol"></i>
-					<span>Тапсырыстар</span>
+					<span>Таңдалмаған</span>
+				</a>
+				<a class="pmenu_i <?=($menu_name=='history'?'pmenu_i_act':'')?>" href="/orders/list.php?sort=history">
+					<i class="far fa-clipboard-list-check"></i>
+					<span>Дайын</span>
 				</a>
 			<? endif ?>
 

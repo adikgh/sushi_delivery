@@ -6,7 +6,7 @@
 
 
    	$type = @$_GET['type'];
-   	$sort = 1; if (@$_GET['sort']) $sort = @$_GET['sort'];
+   	$sort = 'new'; if (@$_GET['sort']) $sort = @$_GET['sort'];
 
 
 	// if (@$_GET['status']) {
@@ -76,7 +76,12 @@
 
 	$start_cdate = '2025-01-19';
 
-	$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and branch_id = '$branch' and `order_status` = 1 order by number asc");
+	if ($sort == 'new') {
+		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and branch_id = '$branch' and `order_status` = 1 and `сourier_id` is null order by number asc");
+	} else {
+		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and branch_id = '$branch' and `order_status` = 1 and `сourier_id` is not null order by number asc");
+	}
+
 
 
 	$allorder['total'] = 0;
@@ -85,7 +90,7 @@
 
 
 	// site setting
-	$menu_name = 'orders';
+	$menu_name = 'new'; if ($sort == 'history') $menu_name = 'history';
 	$pod_menu_name = 'main';
 	$css = ['orders'];
 	$js = ['orders'];

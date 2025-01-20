@@ -6,7 +6,7 @@
 
 
    	$type = @$_GET['type'];
-   	$sort = 1; if (@$_GET['sort']) $sort = @$_GET['sort'];
+   	$sort = 'new'; if (@$_GET['sort']) $sort = @$_GET['sort'];
 
 
 	// if (@$_GET['status']) {
@@ -76,7 +76,12 @@
 
 	$start_cdate = '2025-01-19';
 
-	$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and branch_id = '$branch' and `order_status` = 1 order by number asc");
+	if ($sort == 'new') {
+		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and branch_id = '$branch' and `order_status` = 1 and `сourier_id` = '$user_id' order by number asc");
+	} else {
+		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and branch_id = '$branch' and `order_status` in(4, 6) and `сourier_id` = '$user_id' order by number asc");
+	}
+
 
 
 	$allorder['total'] = 0;
@@ -109,6 +114,11 @@
 											<div class=""><?=date("Y-m-d", strtotime($buy_d['ins_dt']))?></div>
 											<div class=""><?=date("H:i", strtotime($buy_d['ins_dt']))?></div>
 										</div>
+										<? if ($buy_d['order_status'] == 1): ?>
+											<div class="uc_uil2_chek">
+												<div class="btn btn_cl btn_44 on_check" data-id="<?=$buy_d['id']?>"><i class="far fa-check"></i></div>
+											</div>
+										<? endif ?>
 									</div>
 									<div class="uc_uil2_raz">
 										<div class="uc_uil2_trt">
