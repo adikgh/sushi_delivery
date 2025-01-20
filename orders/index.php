@@ -170,7 +170,7 @@
 											</div>
 											<div class="uc_uil2_mib">
 												<a class="btn btn_phone" href="tel:8<?=$buy_d['phone']?>">Званок</a>
-												<a class="btn btn_whatsapp" href="https://wa.me?tel=<?=$buy_d['phone']?>">Whatsapp</a>
+												<a class="btn btn_whatsapp" href="https://wa.me/<?=$buy_d['phone']?>">Whatsapp</a>
 											</div>
 										</div>
 									<? endif ?>
