@@ -9,7 +9,7 @@
    	$sort = 'new'; if (@$_GET['sort']) $sort = @$_GET['sort'];
 
 
-	$start_cdate = '2025-01-10';
+	// $start_cdate = '2025-01-10';
 
 	if ($sort == 'new') {
 		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `order_type` = 1 and `сourier_id` is null order by number asc");

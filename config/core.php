@@ -63,7 +63,7 @@
 
    // setting
    $site = mysqli_fetch_array(db::query("select * from `site` where id = 1"));
-   $ver = 1.027;
+   $ver = 1.0271;
 
    // 
    $site_set = [
@@ -102,7 +102,7 @@
 
    if ($time > "00:00:00" && $time < "06:00:00") {
       $start_cdate = date('Y-m-d 06:00:00', strtotime("$date -1 day"));
-      $end_cdate = date("Y-m-d 06:00:00", strtotime("$start_cdate +1 day"));
+      $end_cdate = date('Y-m-d 06:00:00');
    } else {
       $start_cdate = date('Y-m-d 06:00:00');
       $end_cdate = date("Y-m-d 06:00:00", strtotime("$start_cdate +1 day"));
