@@ -238,8 +238,8 @@ smail{font-size:14px}
 .bl_c{
 	position: relative;
 	width: 100%;
-	max-width: 1720px;
-	padding: 0 5px;
+	max-width: 1068px;
+	padding: 0 20px;
 	margin: auto;
 	z-index: 11;
 }

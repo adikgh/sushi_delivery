@@ -65,7 +65,11 @@
 
 
 
-
+		// user management
+		public static function branch($id) {
+			$sql = db::query("select * from company_branch where id = '$id'");
+			if (mysqli_num_rows($sql)) return mysqli_fetch_array($sql); else return 0;
+		}
 
 
 		// user

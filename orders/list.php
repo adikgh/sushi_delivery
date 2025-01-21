@@ -9,95 +9,37 @@
    	$sort = 'new'; if (@$_GET['sort']) $sort = @$_GET['sort'];
 
 
-	// if (@$_GET['status']) {
-	// 	$status = $_GET['status'];
-	// 	$orders_all = db::query("select * from retail_orders where ins_dt LIKE '%$currentdate%' and order_status = '$status' ");
-	// } else $orders_all = db::query("select * from retail_orders where ins_dt LIKE '%$currentdate%' ");
-	// $page_result = mysqli_num_rows($orders_all);
-	// $orders = '';
-
-	
-
-	// filter user all
-	// if ($type != 'return') {
-	// 	if ($_GET['on'] == 1) $orders_all = db::query("select * from retail_orders where paid = 1 ");
-	// 	elseif ($_GET['off'] == 1) $orders_all = db::query("select * from retail_orders where paid = 1 ");
-	// 	else 
-
-	// } else {
-	// 	if ($_GET['on'] == 1) $orders_all = db::query("select * from retail_returns where returns = 1 ");
-	// 	elseif ($_GET['off'] == 1) $orders_all = db::query("select * from retail_returns where returns = 1 ");
-	// 	else $orders_all = db::query("select * from retail_returns where returns = 1 ");
-	// 	$page_result = mysqli_num_rows($orders_all);
-	// }
-
-	// $orders_all = db::query("select * from retail_orders where ins_dt LIKE '%$currentdate%' ");
-	// $page_result = mysqli_num_rows($orders_all);
-	// $orders = '';
-
-	// if ($page_result) {
-		// page number
-		// $page = 1; if (@$_GET['page'] && is_int(intval(@$_GET['page']))) $page = @$_GET['page'];
-		// $page_age = 250;
-		// $page_all = ceil($page_result / $page_age);
-		// if ($page > $page_all) $page = $page_all;
-		// $page_start = ($page - 1) * $page_age;
-		// $number = $page_start;
-
-		// filter cours
-		// if ($type != 'return') {
-		// 	if ($_GET['on'] == 1) $orders = db::query("select * from retail_orders where paid = 1  order by ins_dt desc limit $page_start, $page_age");
-		// 	elseif ($_GET['off'] == 1) $orders = db::query("select * from retail_orders where paid = 1  order by ins_dt desc limit $page_start, $page_age");
-		// 	else 
-		// } else {
-		// 	if ($_GET['on'] == 1) $orders = db::query("select * from retail_returns where returns = 1  order by ins_dt desc limit $page_start, $page_age");
-		// 	elseif ($_GET['off'] == 1) $orders = db::query("select * from retail_returns where returns = 1  order by ins_dt desc limit $page_start, $page_age");
-		// 	else $orders = db::query("select * from retail_returns where returns = 1  order by ins_dt desc limit $page_start, $page_age");
-		// }
-
-		// }
-
-
-
-	// if (@$_GET['status'] && @$_GET['staff']) {
-	// 	$status = $_GET['status'];
-	// 	$staff = $_GET['staff'];
-	// 	if ($staff == 'off') $orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and order_status = '$status' and сourier_id is null  and branch_id = '$branch' order by number desc");
-	// 	else $orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and order_status = '$status' and сourier_id  = '$staff'  and branch_id = '$branch' order by number desc");
-	// } elseif (@$_GET['status']) {
-	// 	$status = $_GET['status'];
-	// 	$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and order_status = '$status'  and branch_id = '$branch' order by number desc");
-	// } elseif (@$_GET['staff']) {
-	// 	$staff = $_GET['staff'];
-	// 	if ($staff == 'off') $orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and сourier_id is null  and branch_id = '$branch' order by number desc");
-	// 	else $orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and сourier_id  = '$staff'  and branch_id = '$branch' order by number desc");
-	// } else 
-	
-
-	$start_cdate = '2025-01-19';
+	$start_cdate = '2025-01-10';
 
 	if ($sort == 'new') {
-		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and branch_id = '$branch' and `order_status` = 1 and `сourier_id` is null order by number asc");
+		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `order_status` = 1 and `сourier_id` is null order by number asc");
+	} elseif ($sort == 'myself') {
+		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `order_status` = 2 order by number asc");
 	} else {
-		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and branch_id = '$branch' and `order_status` = 1 and `сourier_id` is not null order by number asc");
+		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `order_status` = 1 and `сourier_id` is not null order by number asc");
 	}
 
 
 
 	$allorder['total'] = 0;
+	$allorder['number'] = 0;
 	$allorder['pay_qr'] = 0;
 	$allorder['pay_delivery'] = 0;
 
 
 	// site setting
-	$menu_name = 'new'; if ($sort == 'history') $menu_name = 'history';
+	$menu_name = 'new'; 
+	if ($sort == 'history') $menu_name = 'history';
+	elseif ($sort == 'myself') $menu_name = 'myself';
+
 	$pod_menu_name = 'main';
 	$css = ['orders'];
 	$js = ['orders'];
 ?>
 <? include "../block/header.php"; ?>
 
-	<div class="">
+	<div class="flex_clm_rev">
+
 		<div class="bl_c">
 
 			<div class="uc_u">
@@ -106,14 +48,15 @@
 					<? if (mysqli_num_rows($orders) != 0): ?>
 						<? while ($buy_d = mysqli_fetch_assoc($orders)): ?>
 							<? if ($buy_d['сourier_id']) $сourier_d = fun::user($buy_d['сourier_id']); ?>
+							<? if ($buy_d['branch_id']) $branch_d = fun::branch($buy_d['branch_id']); ?>
 
 							<div class="uc_ui">
 								<div class="uc_uil2" >
 									<div class="uc_uil2_top">
 										<div class="uc_uil2_nmb"><?=$buy_d['number']?></div>
 										<div class="uc_uil2_date">
-											<div class=""><?=date("Y-m-d", strtotime($buy_d['ins_dt']))?></div>
-											<div class=""><?=date("H:i", strtotime($buy_d['ins_dt']))?></div>
+											<div class="uc_uil2_date1"><?=@$branch_d['name']?></div>
+											<div class=""><?=date("d-m-Y", strtotime($buy_d['ins_dt']))?> ⌛ <?=date("H:i", strtotime($buy_d['ins_dt']))?></div>
 										</div>
 									</div>
 									<div class="uc_uil2_raz">
@@ -163,25 +106,33 @@
 										</div>
 									</div>
 
-									<div class="uc_uil2_raz">
-										<div class="uc_uil2_mi">
-											<div class="uc_uil2_mi1">Курьер:</div>
-											<div class="uc_uil2_mi2"><?=($buy_d['сourier_id']?$сourier_d['name']:'Таңдалмаған')?></div>
+									<? if ($sort != 'myself'): ?>
+										<div class="uc_uil2_raz">
+											<div class="uc_uil2_mi">
+												<div class="uc_uil2_mi1">Курьер:</div>
+												<div class="uc_uil2_mi2"><?=($buy_d['сourier_id']?$сourier_d['name']:'Таңдалмаған')?></div>
+											</div>
+											<div class="uc_uil2_sel">
+												<select name="" id="" class="on_staff" data-order-id="<?=$buy_d['id']?>" >
+													<option value="" ><?=($buy_d['сourier_id']?'Ауыстыру':'Таңдау')?></option>
+													<? $staff = db::query("select * from user_staff where positions_id = 6"); ?>
+													<? while ($staff_d = mysqli_fetch_assoc($staff)): ?>
+														<? $staff_user_d = fun::user($staff_d['user_id']); ?>
+														<option value="" data-id="<?=$staff_d['user_id']?>" ><?=$staff_user_d['name']?></option>
+													<? endwhile ?>
+												</select>
+											</div>
 										</div>
-										<div class="uc_uil2_sel">
-											<select name="" id="" class="on_staff" data-order-id="<?=$buy_d['id']?>" >
-												<option value="" ><?=($buy_d['сourier_id']?'Ауыстыру':'Таңдау')?></option>
-												<? $staff = db::query("select * from user_staff where positions_id = 6"); ?>
-												<? while ($staff_d = mysqli_fetch_assoc($staff)): ?>
-													<? $staff_user_d = fun::user($staff_d['user_id']); ?>
-													<option value="" data-id="<?=$staff_d['user_id']?>" ><?=$staff_user_d['name']?></option>
-												<? endwhile ?>
-											</select>
-										</div>
-									</div>
+									<? endif ?>
+
 
 								</div>
 							</div>
+
+							<? 
+								$allorder['number'] = $allorder['number'] + 1;
+								$allorder['pay_delivery'] = $allorder['pay_delivery'] + $buy_d['pay_delivery'] + 500;
+							?>
 
 						<? endwhile ?>
 					<? else: ?> <div class="ds_nr"><i class="fal fa-ghost"></i><p>НЕТ</p></div> <? endif ?>
@@ -190,6 +141,32 @@
 			</div>
 
 		</div>
+
+
+		<div class="hil_head">
+			<div class="bl_c">
+
+				<div class="hil_headc">
+					<? if ($sort == 'history'): ?>
+						<h4 class="hil_headc1 txt_c">Белгіленген заказдар</h4>
+					<? else: ?>
+						<h4 class="hil_headc1 txt_c">Жаңа заказдар</h4>
+					<? endif ?>
+					<div class="hil_headc2">
+						<div class="hil_headc2s">
+							<span>Заказ саны:</span>
+							<p><?=$allorder['number']?> шт</p>
+						</div>
+						<!-- <div class="hil_headc2s">
+							<span>Ақшасы:</span>
+							<p class="fr_price"><?=$allorder['pay_delivery']?></p>
+						</div> -->
+					</div>
+				</div>
+
+			</div>
+		</div>
+
 	</div>
 
 <? include "../block/footer.php"; ?>

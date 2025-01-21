@@ -1,4 +1,4 @@
-<? if ($site_set['menu'] == true): ?>
+<? if ($site_set['menu']): ?>
    <div class="pmenu">
 		<div class="pmenu_c">
 			<? if ($user_right['positions_id'] == 6): ?>
@@ -19,6 +19,10 @@
 				<a class="pmenu_i <?=($menu_name=='history'?'pmenu_i_act':'')?>" href="/orders/list.php?sort=history">
 					<i class="far fa-clipboard-list-check"></i>
 					<span>Дайын</span>
+				</a>
+				<a class="pmenu_i <?=($menu_name=='myself'?'pmenu_i_act':'')?>" href="/orders/list.php?sort=myself">
+					<i class="far fa-hand-receiving"></i>
+					<span>Собой</span>
 				</a>
 			<? endif ?>
 

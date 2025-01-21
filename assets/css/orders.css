@@ -7,21 +7,79 @@
 
 
 
+.flex_clm_rev{
+   display: flex;
+   flex-direction: column-reverse;
+}
 
 
+
+
+
+
+.hil_head{
+   position: relative;
+   width: 100%;
+   padding: 30px 0 15px 0;
+   background: var(--wh);
+}
+.hil_headc{
+   position: relative;
+   width: 100%;
+}
+
+.hil_headc2{
+   position: relative;
+   width: 100%;
+   display: flex;
+   align-items: stretch;
+   justify-content: space-between;
+}
+.hil_headc2s{
+   position: relative;
+   width: calc(50% - 5px);
+   margin-top: 20px;
+   padding: 20px;
+   border-radius: 8px;
+   border: 1px solid var(--gr5);
+}
+.hil_headc2s span{
+   font-size: 16px;
+}
+.hil_headc2s p{
+   font-size: 18px;
+   font-weight: 700;
+   color: var(--cl);
+}
+
+
+
+
+
+
+
+/*  */
 .uc_u{
    position: relative;
    width: 100%;
    display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   gap: 15px;
-   padding: 15px 0; 
+   grid-template-columns: repeat(3, 1fr);
+   gap: 20px;
+   padding: 20px 0; 
+}
+@media (max-width: 768px) {
+   .uc_u{
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      padding: 15px 0;
+   }
 }
 @media (max-width: 500px) {
    .uc_u{
       grid-template-columns: repeat(1, 1fr);
       gap: 10px;
-      padding: 10px 0; 
+      padding: 10px 0;
+      padding-bottom: 40px;
    }
 }
 
@@ -53,6 +111,11 @@
 }
 .uc_uil2_date div:last-child{
    margin-top: 7px;
+}
+
+.uc_uil2_date1{
+   font-size: 16px;
+   font-weight: 700;
 }
 
 
@@ -164,5 +227,28 @@
    width: calc(50% - 5px);
 }
 .uc_uil2_mib1 .btn{
+   width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.uc_ukb{
+   position: relative;
+   width: 100%;
+   padding: 20px 0 60px 0;
+}
+.uc_ukb .btn{
    width: 100%;
 }
