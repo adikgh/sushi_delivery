@@ -57,7 +57,7 @@
    // 
 	if(isset($_GET['check'])) {
 		$id = strip_tags($_POST['id']);
-      $upd = db::query("UPDATE `retail_orders` SET `order_status` = 6 WHERE id = '$id'");
+      $upd = db::query("UPDATE `retail_orders` SET `order_status` = 4 WHERE id = '$id'");
       echo 'yes';
 
       exit();
