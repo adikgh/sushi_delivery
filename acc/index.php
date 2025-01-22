@@ -1,21 +1,94 @@
 <? include "../config/core.php";
 
-	// 
+	// Қолданушыны тексеру
 	if (!$user_id) header('location: /');
 
-
-	// site setting
+	// Сайттың баптаулары
 	$menu_name = 'acc';
-	// $css = [''];
-	// $js = [''];
+	$site_set['utop_nm'] = 'Жеке деректер';
+	$css = ['acc'];
+	// $js = [];
 ?>
 <? include "../block/header.php"; ?>
 
-	<div class="bl_c">
-		<div class="onj">
-			<a class="btn btn_cl" href="/exit.php">Шығу</a>
+	<div class="up">
+
+		<div class="up_top">
+			<div class="up_lg">
+				<div class="up_logo">
+					<? if ($user['img']): ?> <div class="up_logo_c lazy_img" data-src="/assets/uploads/users/<?=$user['img']?>"></div>
+					<? else: ?> <div class="up_logo_icons lazy_img" data-src="/assets/img/icons/princess_light-skin-tone_1f478-1f3fb_1f3fb.png"></div> <? endif ?>
+				</div>
+				<div class="up_logo_upd"><i class="fal fa-camera"></i></div>
+			</div>
+			<div class="up_inf">
+				<div class="up_name"><?=$user['name']?> <?=$user['surname']?></div>
+				<div class="up_phone fr_phone"><?=$user['phone']?></div>
+			</div>
+		</div>
+
+		<div class="bl_c">
+			
+			<div class="up_c">
+
+				<div class="up_lt">
+					<div class="up_li">
+						<div class="menu_cin"><i class="fal fa-user-circle"></i></div>
+						<div class="menu_cih">Жеке деректер</div>
+					</div>
+
+					<? if ($user_right['positions_id'] == 3 || $user_right['positions_id'] == 2 || $user_right['positions_id'] == 1): ?>
+						<a class="up_li" href="/users/">
+							<div class="menu_cin"><i class="fal fa-users"></i></div>
+							<div class="menu_cih">Курьерлер</div>
+						</a>
+					<? endif ?>
+
+				</div>
+
+				<!-- <div class="up_lt">
+					<a class="up_li" href="#">
+						<div class="menu_cin"><i class="fal fa-question-circle"></i></div>
+						<div class="menu_cih">Жиі қойылатын сұрақтар</div>
+					</a>
+					<a class="up_li" href="https://wa.me/<?=$site['whatsapp']?>">
+						<div class="menu_cin"><i class="fal fa-comment-dots"></i></div>
+						<div class="menu_cih">Көмек (Whatsapp)</div>
+					</a>
+				</div> -->
+				
+				<!-- <div class="up_lt">
+					<a class="up_li" href="#">
+						<div class="menu_cin"><i class="fal fa-award"></i></div>
+						<div class="menu_cih">Академия жайлы</div>
+					</a>
+					<a class="up_li" href="/education/all/offer.php">
+						<div class="menu_cin"><i class="fal fa-users-cog"></i></div>
+						<div class="menu_cih">Қолдану ережелері</div>
+					</a>
+					<a class="up_li" href="/education/all/privacy.php">
+						<div class="menu_cin"><i class="fal fa-users-cog"></i></div>
+						<div class="menu_cih">Авторлық құқық</div>
+					</a>
+				</div> -->
+
+				<div class="up_exit">
+					<a class="btn btn_back2" href="/education/exit.php">
+						<i class="far fa-sign-out"></i>
+						<span>Шығу</span>
+					</a>
+				</div>
+
+			</div>
+			<div class="up_cg">
+				<a href="https://gprog.kz" target="_blank" class="gprog_bl">
+					<span>#gprog-та</span>
+					<div class="gprog_heart"><i class="fas fa-heart"></i></div>
+					<span>жасалған</span>
+				</a>
+			</div>
+
 		</div>
 	</div>
-
 
 <? include "../block/footer.php"; ?>
