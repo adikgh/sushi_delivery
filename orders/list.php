@@ -16,7 +16,7 @@
 	} elseif ($sort == 'myself') {
 		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `paid` = 1 and `order_type` = 2 order by number asc");
 	} else {
-		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `order_type` = 1 and `сourier_id` is not null order by number asc");
+		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `order_type` = 1 and `сourier_id` is not null order by number desc");
 	}
 
 

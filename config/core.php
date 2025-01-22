@@ -63,7 +63,7 @@
 
    // setting
    $site = mysqli_fetch_array(db::query("select * from `site` where id = 1"));
-   $ver = 1.041;
+   $ver = 1.042;
 
    // 
    $site_set = [
