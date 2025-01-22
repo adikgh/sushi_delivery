@@ -8,7 +8,7 @@
 
 		$user = db::query("SELECT * FROM `user` WHERE phone = '$phone'");
 		if (mysqli_num_rows($user) == 0) {
-			$user_ins = db::query("INSERT INTO `user`(`name`, `phone`, `password`) VALUES ('$name', '$phone', '123456')");
+			$user_ins = db::query("INSERT INTO `user`(`name`, `phone`, `password`, `right`) VALUES ('$name', '$phone', '123456', 1)");
 			if ($user_ins) {
 				$user_d = mysqli_fetch_assoc(db::query("SELECT * FROM `user` WHERE phone = '$phone'"));
 				$user_id = $user_d['id'];
@@ -44,6 +44,19 @@
 		echo 'yes';
 		exit();
 	}
+
+
+   // user delete
+	if(isset($_GET['on_superv'])) {
+		$_SESSION['super'] = $_GET['on_superv'];
+		$super = $_GET['on_superv'];
+		$id = strip_tags($_POST['id']);
+		$buy = db::query("UPDATE `user_staff` SET `positions_id` = '$super' WHERE id = '$id'");
+
+		echo 'yes';
+		exit();
+	}
+
 
 	// sms_send
 	if(isset($_GET['sms_send'])) {

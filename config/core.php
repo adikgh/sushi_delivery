@@ -63,7 +63,7 @@
 
    // setting
    $site = mysqli_fetch_array(db::query("select * from `site` where id = 1"));
-   $ver = 1.03;
+   $ver = 1.041;
 
    // 
    $site_set = [
@@ -93,6 +93,12 @@
       if (isset($_GET['branch'])) if ($_GET['branch'] == 1 || $_GET['branch'] == 2) $_SESSION['branch'] = $_GET['branch'];
       if (isset($_SESSION['branch'])) $branch = $_SESSION['branch'];
    }
+
+   // lang
+   $super = $user_right['positions_id'];
+   if (isset($_SESSION['super'])) $super = $_SESSION['super'];
+
+
 
 
    // date - time

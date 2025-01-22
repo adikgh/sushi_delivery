@@ -93,6 +93,37 @@ $(document).ready(function() {
 	
 
 
+	// view pass
+	$('html').on('click', '.on_superv3', function() {
+		$.ajax({
+			url: "/users/get.php?on_superv=6",
+			type: "POST",
+			dataType: "html",
+			data: ({ id : $(this).attr('data-id'), }),
+			success: function(data){
+				if (data == 'yes') location.reload();
+				else console.log(data)
+			},
+			beforeSend: function(){ },
+			error: function(data){ console.log(data) }
+		})
+	})
+	$('html').on('click', '.on_superv6', function() {
+		$.ajax({
+			url: "/users/get.php?on_superv=3",
+			type: "POST",
+			dataType: "html",
+			data: ({ id : $(this).attr('data-id'), }),
+			success: function(data){
+				if (data == 'yes') location.reload();
+				else console.log(data)
+			},
+			beforeSend: function(){ },
+			error: function(data){ console.log(data) }
+		})
+	})
+
+
 
 
 

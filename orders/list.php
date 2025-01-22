@@ -12,9 +12,9 @@
 	// $start_cdate = '2025-01-10';
 
 	if ($sort == 'new') {
-		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `order_type` = 1 and `сourier_id` is null order by number asc");
+		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `paid` = 1 and `order_type` = 1 and `сourier_id` is null order by number asc");
 	} elseif ($sort == 'myself') {
-		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `order_type` = 2 order by number asc");
+		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `paid` = 1 and `order_type` = 2 order by number asc");
 	} else {
 		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `order_type` = 1 and `сourier_id` is not null order by number asc");
 	}
@@ -105,6 +105,17 @@
 											<div class="uc_uil2_trt3 fr_price"><?=$buy_d['total'] - $buy_d['pay_qr']?></div>
 										</div>
 									</div>
+									<? if ($buy_d['address']): ?>
+										<div class="uc_uil2_raz">
+											<div class="uc_uil2_mi">
+												<div class="uc_uil2_mi1">Адрес:</div>
+												<div class="uc_uil2_mi2"><?=$buy_d['address']?></div>
+											</div>
+											<div class="uc_uil2_mib uc_uil2_mib1">
+												<a class="btn btn_cl" href="https://2gis.ru/shymkent/search/<?=$buy_d['address']?>" target="_blank">Картадан ашу</a>
+											</div>
+										</div>
+									<? endif ?>
 
 									<? if ($sort != 'myself'): ?>
 										<div class="uc_uil2_raz">

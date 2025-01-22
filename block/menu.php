@@ -1,7 +1,7 @@
 <? if ($site_set['menu']): ?>
    <div class="pmenu">
 		<div class="pmenu_c">
-			<? if ($user_right['positions_id'] == 6): ?>
+			<? if ($super == 6): ?>
 				<a class="pmenu_i txt_c <?=($menu_name=='new'?'pmenu_i_act':'')?>" href="/orders/?sort=new">
 					<i class="far fa-list-ol"></i>
 					<span>Жаңа</span>
@@ -11,7 +11,7 @@
 					<span>Тапсырылған</span>
 				</a>
 			<? endif ?>
-			<? if ($user_right['positions_id'] == 3 || $user_right['positions_id'] == 2 || $user_right['positions_id'] == 1): ?>
+			<? if ($super == 3 || $user_right['positions_id'] == 2 || $user_right['positions_id'] == 1): ?>
 				<a class="pmenu_i txt_c <?=($menu_name=='new'?'pmenu_i_act':'')?>" href="/orders/list.php?sort=new">
 					<i class="far fa-list-ol"></i>
 					<span>Таңдалмаған</span>
