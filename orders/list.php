@@ -7,7 +7,7 @@
 
    	$type = @$_GET['type'];
    	$sort = 'new'; if (@$_GET['sort']) $sort = @$_GET['sort'];
-
+	if (@$_GET['branch']) $branch = @$_GET['branch'];
 
 	// $start_cdate = '2025-01-10';
 
@@ -16,7 +16,8 @@
 	} elseif ($sort == 'myself') {
 		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `paid` = 1 and `order_type` = 2 order by number desc");
 	} else {
-		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `order_type` = 1 and `сourier_id` is not null order by number desc");
+		if ($branch != 0) $orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `order_type` = 1 and `branch_id` = '$branch' and `сourier_id` is not null order by number desc");
+		else $orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `order_type` = 1 and `сourier_id` is not null order by number desc");
 	}
 
 
@@ -56,7 +57,7 @@
 										<div class="uc_uil2_nmb"><?=$buy_d['number']?></div>
 										<div class="uc_uil2_date">
 											<div class="uc_uil2_date1"><?=@$branch_d['name']?></div>
-											<div class=""><?=date("d-m-Y", strtotime($buy_d['ins_dt']))?> ⌛ <?=date("H:i", strtotime($buy_d['ins_dt']))?></div>
+											<div class=""><?=date("d-m-Y", strtotime($buy_d['ins_dt']))?> ⌛ <?=date("H:i", strtotime($buy_d['ins_dt']))?> <?=($buy_d['preorder_dt']?'| 🔴':'')?>  <?=($buy_d['preorder_dt']?$buy_d['preorder_dt']:'')?></div>
 										</div>
 									</div>
 									<div class="uc_uil2_raz">
@@ -142,7 +143,9 @@
 
 							<? 
 								$allorder['number'] = $allorder['number'] + 1;
-								$allorder['pay_delivery'] = $allorder['pay_delivery'] + $buy_d['pay_delivery'] + 500;
+								if ($buy_d['order_status'] != 5 && $buy_d['order_status'] != 6) {
+									$allorder['pay_delivery'] = $allorder['pay_delivery'] + $buy_d['pay_delivery'] + 500;
+								}
 							?>
 
 						<? endwhile ?>
@@ -160,8 +163,17 @@
 				<div class="hil_headc">
 					<? if ($sort == 'history'): ?>
 						<h4 class="hil_headc1 txt_c">Белгіленген заказдар</h4>
+					<? elseif ($sort == 'myself'): ?>
+						<h4 class="hil_headc1 txt_c">Собой</h4>
 					<? else: ?>
 						<h4 class="hil_headc1 txt_c">Жаңа заказдар</h4>
+					<? endif ?>
+					<? if ($sort == 'history'): ?>
+						<div class="hil_fr1">
+							<div class="hil_fr1c on_sort_branch <?=($branch == 0?'hil_fr1c_act':'')?>" data-id="0">Барлығы</div>
+							<div class="hil_fr1c on_sort_branch <?=($branch == 1?'hil_fr1c_act':'')?>" data-id="1">Банзай</div>
+							<div class="hil_fr1c on_sort_branch <?=($branch == 2?'hil_fr1c_act':'')?>" data-id="2">Мастер</div>
+						</div>
 					<? endif ?>
 					<div class="hil_headc2">
 						<div class="hil_headc2s">

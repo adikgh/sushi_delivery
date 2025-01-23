@@ -123,6 +123,15 @@ $(document).ready(function() {
       history.pushState(null, null, url);
       location.reload();
 	})
+   
+   // 
+	$('.on_sort_branch').on('click', function () {
+      var val = $(this).attr('data-id');
+      const url = new URL(window.location);
+      url.searchParams.set('branch', val); 
+      history.pushState(null, null, url);
+      location.reload();
+	})
 
 
 

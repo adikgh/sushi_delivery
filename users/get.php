@@ -48,7 +48,7 @@
 
    // user delete
 	if(isset($_GET['on_superv'])) {
-		$_SESSION['super'] = $_GET['on_superv'];
+		// $_SESSION['super'] = $_GET['on_superv'];
 		$super = $_GET['on_superv'];
 		$id = strip_tags($_POST['id']);
 		$buy = db::query("UPDATE `user_staff` SET `positions_id` = '$super' WHERE id = '$id'");

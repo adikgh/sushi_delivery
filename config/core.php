@@ -88,15 +88,15 @@
    if (isset($_SESSION['lang'])) $lang = $_SESSION['lang'];
 
    // lang
-   $branch = 1; if (@$user_right['branch_id']) $branch = $user_right['branch_id'];
-   if (@$user_right['positions_id'] != 4) {
-      if (isset($_GET['branch'])) if ($_GET['branch'] == 1 || $_GET['branch'] == 2) $_SESSION['branch'] = $_GET['branch'];
-      if (isset($_SESSION['branch'])) $branch = $_SESSION['branch'];
-   }
+   $branch = 0; if (@$user_right['branch_id']) $branch = $user_right['branch_id'];
+   // if (@$user_right['positions_id'] != 4) {
+   //    if (isset($_GET['branch'])) if ($_GET['branch'] == 1 || $_GET['branch'] == 2) $_SESSION['branch'] = $_GET['branch'];
+   //    if (isset($_SESSION['branch'])) $branch = $_SESSION['branch'];
+   // }
 
    // lang
    $super = $user_right['positions_id'];
-   if (isset($_SESSION['super'])) $super = $_SESSION['super'];
+   // if (isset($_SESSION['super'])) $super = $_SESSION['super'];
 
 
 
