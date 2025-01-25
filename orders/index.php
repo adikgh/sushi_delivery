@@ -187,7 +187,7 @@
 						</div>
 						<? if ($sort != 'new'): ?>
 							<div class="hil_headc2s">
-								<span>Операторға:</span>
+								<span>Предоплата:</span>
 								<p class="fr_price"><?=$allorder['pay_qr']?></p>
 							</div>
 							<div class="hil_headc2s">
