@@ -9,10 +9,10 @@
    	$sort = 'new'; if (@$_GET['sort']) $sort = @$_GET['sort'];
 	if (@$_GET['branch']) $branch = @$_GET['branch'];
 
-	// $start_cdate = '2025-01-10';
+	$start_cdate = '2025-01-10';
 
 	if ($sort == 'new') {
-		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `paid` = 1 and `order_status` != 1 and `сourier_id` is null order by number asc");
+		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `paid` = 1 and `order_status` != 4 and `сourier_id` is null order by number asc");
 	} elseif ($sort == 'myself') {
 		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `paid` = 1 and `order_type` = 2 order by number desc");
 	} else {
