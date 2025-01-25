@@ -9,7 +9,7 @@
    	$sort = 'new'; if (@$_GET['sort']) $sort = @$_GET['sort'];
 	if (@$_GET['branch']) $branch = @$_GET['branch'];
 
-	// $start_cdate = '2025-01-10';
+	// $start_cdate = '2025-01-23';
 
 	if ($sort == 'new') {
 		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `paid` = 1 and `order_status` != 4 and `сourier_id` is null order by number asc");
@@ -127,6 +127,9 @@
 											<div class="uc_uil2_sel">
 												<select name="" id="" class="on_staff" data-order-id="<?=$buy_d['id']?>" >
 													<option value="" ><?=($buy_d['сourier_id']?'Ауыстыру':'Таңдау')?></option>
+													<? if ($buy_d['сourier_id']): ?>
+														<option value="" data-id="off">Тазалау</option>
+													<? endif ?>
 													<? $staff = db::query("select * from user_staff where positions_id = 6"); ?>
 													<? while ($staff_d = mysqli_fetch_assoc($staff)): ?>
 														<? $staff_user_d = fun::user($staff_d['user_id']); ?>
