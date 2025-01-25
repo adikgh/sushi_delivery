@@ -103,7 +103,7 @@
 										<div class="uc_uil2_trb">
 											<div class="uc_uil2_trt1">К оплате</div>
 											<div class="uc_uil2_trt2"></div>
-											<div class="uc_uil2_trt3 fr_price"><?=$buy_d['total'] - $buy_d['pay_qr']?></div>
+											<div class="uc_uil2_trt3 fr_price"><?=$buy_d['pay_cash']?></div>
 										</div>
 									</div>
 									<? if ($buy_d['address']): ?>
