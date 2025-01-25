@@ -31,14 +31,14 @@
 .hil_headc2{
    position: relative;
    width: 100%;
-   display: flex;
-   align-items: stretch;
-   justify-content: space-between;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 10px;
+   margin-top: 20px;
 }
 .hil_headc2s{
    position: relative;
-   width: calc(50% - 5px);
-   margin-top: 20px;
+   width: 100%;
    padding: 20px;
    border-radius: 8px;
    border: 1px solid var(--gr5);

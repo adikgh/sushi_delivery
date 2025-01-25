@@ -24,6 +24,8 @@
 
 	$allorder['number'] = 0;
 	$allorder['pay_delivery'] = 0;
+	$allorder['pay_qr'] = 0;
+	$allorder['pay_cash'] = 0;
 
 
 	// site setting
@@ -51,7 +53,7 @@
 									<div class="uc_uil2_top">
 										<div class="uc_uil2_nmb"><?=$buy_d['number']?></div>
 										<div class="uc_uil2_date">
-											<div class="uc_uil2_date1"><?=$branch_d['name']?></div>
+											<div class="uc_uil2_date1"><?=@$branch_d['name']?></div>
 											<div class=""><?=date("d-m-Y", strtotime($buy_d['ins_dt']))?> ⌛ <?=date("H:i", strtotime($buy_d['ins_dt']))?> <?=($buy_d['preorder_dt']?'| 🔴':'')?>  <?=($buy_d['preorder_dt']?$buy_d['preorder_dt']:'')?></div>
 										</div>
 										<? if ($buy_d['order_status'] == 1): ?>
@@ -139,6 +141,8 @@
 								$allorder['number'] = $allorder['number'] + 1;
 								if ($buy_d['order_status'] != 5 && $buy_d['order_status'] != 6) {
 									$allorder['pay_delivery'] = $allorder['pay_delivery'] + $buy_d['pay_delivery'] + 500;
+									$allorder['pay_qr'] = $allorder['pay_qr'] + $buy_d['pay_qr'];
+									$allorder['pay_cash'] = $allorder['pay_cash'] + ($buy_d['pay_cash'] - ($buy_d['pay_delivery'] + 500));
 								}
 							?>
 
@@ -178,9 +182,20 @@
 							<p><?=$allorder['number']?> шт</p>
 						</div>
 						<div class="hil_headc2s">
-							<span>Ақшасы:</span>
+							<span>Доставкаға:</span>
 							<p class="fr_price"><?=$allorder['pay_delivery']?></p>
 						</div>
+						<? if ($sort != 'new'): ?>
+							<div class="hil_headc2s">
+								<span>Операторға:</span>
+								<p class="fr_price"><?=$allorder['pay_qr']?></p>
+							</div>
+							<div class="hil_headc2s">
+								<span>Кассаға:</span>
+								<p class="fr_price"><?=$allorder['pay_cash']?></p>
+							</div>
+						<? endif ?>
+
 					</div>
 				</div>
 
