@@ -11,7 +11,7 @@
 	if (@$_GET['branch']) $branch = @$_GET['branch'];
 	
 
-	// $start_cdate = '2025-01-10';
+	$start_cdate = '2025-01-10';
 
 	if ($sort == 'new') {
 		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `order_type` = 1 and `order_status` in(1, 2, 3) and `сourier_id` = '$user_id' order by number asc");
@@ -142,7 +142,7 @@
 								if ($buy_d['order_status'] != 5 && $buy_d['order_status'] != 6) {
 									$allorder['pay_delivery'] = $allorder['pay_delivery'] + $buy_d['pay_delivery'] + 500;
 									$allorder['pay_qr'] = $allorder['pay_qr'] + $buy_d['pay_qr'];
-									$allorder['pay_cash'] = $allorder['pay_cash'] + ($buy_d['pay_cash'] - ($buy_d['pay_delivery'] + 500));
+									if ($buy_d['pay_cash'] > 0) $allorder['pay_cash'] = $allorder['pay_cash'] + ($buy_d['pay_cash'] - ($buy_d['pay_delivery'] + 500));
 								}
 							?>
 
