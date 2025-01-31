@@ -170,11 +170,11 @@
 						<h4 class="hil_headc1 txt_c">Жеткізу қажет заказдар</h4>
 					<? endif ?>
 					<? if ($sort != 'new'): ?>
-						<div class="hil_fr1">
+						<!-- <div class="hil_fr1">
 							<div class="hil_fr1c on_sort_branch <?=($branch == 0?'hil_fr1c_act':'')?>" data-id="0">Барлығы</div>
 							<div class="hil_fr1c on_sort_branch <?=($branch == 1?'hil_fr1c_act':'')?>" data-id="1">Банзай</div>
 							<div class="hil_fr1c on_sort_branch <?=($branch == 2?'hil_fr1c_act':'')?>" data-id="2">Мастер</div>
-						</div>
+						</div> -->
 					<? endif ?>
 					<div class="hil_headc2">
 						<div class="hil_headc2s">
