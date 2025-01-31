@@ -14,10 +14,10 @@
 	// $start_cdate = '2025-01-10';
 
 	if ($sort == 'new') {
-		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `order_type` = 1 and `order_status` in(1, 2, 3) and `сourier_id` = '$user_id' order by number asc");
+		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `order_type` = 1 and `order_status` in(1, 2, 3) and `сourier_id` = '$user_id' and company_id = '$company' order by number asc");
 	} else {
-		if ($branch != 0) $orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `order_type` = 1 and `order_status` in(4, 6) and `сourier_id` = '$user_id' and `branch_id` = '$branch' order by number desc");
-		else $orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `order_type` = 1 and `order_status` in(4, 6) and `сourier_id` = '$user_id' order by number desc");
+		if ($branch != 0) $orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `order_type` = 1 and `order_status` in(4, 6) and `сourier_id` = '$user_id' and company_id = '$company' and `branch_id` = '$branch' order by number desc");
+		else $orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `order_type` = 1 and `order_status` in(4, 6) and `сourier_id` = '$user_id' and company_id = '$company' order by number desc");
 	}
 
 
