@@ -183,6 +183,8 @@
 							<div class="hil_fr1c on_sort_branch <?=($branch == 2?'hil_fr1c_act':'')?>" data-id="2">Мастер</div>
 						</div> -->
 
+						<br>
+
 						<div class="">
 							<div class="form_im">
 								<input class="form_dt on_sort_time" type="date" name="" id="" value="<?=date('Y-m-d', strtotime("$start_cdate"))?>">
