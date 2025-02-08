@@ -30,6 +30,7 @@
 
 
 	$allorder['number'] = 0;
+	$pay_delivery = 0;
 	$allorder['pay_delivery'] = 0;
 	$allorder['pay_qr'] = 0;
 	$allorder['pay_cash'] = 0;
@@ -147,9 +148,11 @@
 							<? 
 								$allorder['number'] = $allorder['number'] + 1;
 								if ($buy_d['order_status'] != 5 && $buy_d['order_status'] != 6) {
-									$allorder['pay_delivery'] = $allorder['pay_delivery'] + $buy_d['pay_delivery'] + 500;
+									$pay_delivery = $buy_d['pay_delivery'] + 500;
+
 									$allorder['pay_qr'] = $allorder['pay_qr'] + $buy_d['pay_qr'];
-									if ($buy_d['pay_cash'] > 0) $allorder['pay_cash'] = $allorder['pay_cash'] + ($buy_d['pay_cash'] - ($buy_d['pay_delivery'] + 500));
+									$allorder['pay_delivery'] = $allorder['pay_delivery'] + $pay_delivery;
+									 if ($buy_d['pay_cash'] > 0) $allorder['pay_cash'] = $allorder['pay_cash'] + ($buy_d['pay_cash'] - $pay_delivery);
 								}
 							?>
 
