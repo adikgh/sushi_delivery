@@ -11,6 +11,13 @@
 	if (@$_GET['branch']) $branch = @$_GET['branch'];
 	
 
+	if (@$_GET['time']) {
+		$time_sort = $_GET['time'];
+		$start_cdate = date('Y-m-d 06:00:00', strtotime("$time_sort"));
+		$end_cdate = date('Y-m-d 06:00:00', strtotime("$start_cdate +1 day"));
+	}
+	
+
 	// $start_cdate = '2025-01-10';
 
 	if ($sort == 'new') {
@@ -175,6 +182,13 @@
 							<div class="hil_fr1c on_sort_branch <?=($branch == 1?'hil_fr1c_act':'')?>" data-id="1">Банзай</div>
 							<div class="hil_fr1c on_sort_branch <?=($branch == 2?'hil_fr1c_act':'')?>" data-id="2">Мастер</div>
 						</div> -->
+
+						<div class="">
+							<div class="form_im">
+								<input class="form_dt on_sort_time" type="date" name="" id="" value="<?=date('Y-m-d', strtotime("$start_cdate"))?>">
+							</div>
+						</div>
+
 					<? endif ?>
 					<div class="hil_headc2">
 						<div class="hil_headc2s">

@@ -1299,6 +1299,28 @@ textarea.form_txt{
 
 
 
+
+
+
+
+
+/*  */
+.form_dt{
+	width: 100%;
+	position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /*  */
 .form_d{
 	display: flex;
@@ -2596,3 +2618,20 @@ textarea.form_txt{
 	width: 100%;
 	border: 1px solid var(--cl);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

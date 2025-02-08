@@ -12,7 +12,7 @@
 	// $start_cdate = '2025-01-23';
 
 	if ($sort == 'new') {
-		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `paid` = 1 and `order_type` = 1 and `order_status` != 4 and company_id = '$company' and `сourier_id` is null order by number asc");
+		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `paid` = 1 and `order_type` = 1 and `order_status` in(1, 2, 3) and company_id = '$company' and `сourier_id` is null order by number asc");
 	} elseif ($sort == 'myself') {
 		$orders = db::query("select * from retail_orders where ins_dt BETWEEN '$start_cdate' and '$end_cdate' and `paid` = 1 and `order_type` = 2 and company_id = '$company' order by number desc");
 	} else {

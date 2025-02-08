@@ -42,6 +42,11 @@
 							<div class="menu_cin"><i class="fal fa-users"></i></div>
 							<div class="menu_cih">Курьерлер</div>
 						</a>
+					<? else: ?>
+						<!-- <a class="up_li" href="/users/">
+							<div class="menu_cin"><i class="fal fa-history"></i></div>
+							<div class="menu_cih">Тарих</div>
+						</a> -->
 					<? endif ?>
 					<? if ($user_right['super_v'] == 1): ?>
 						<? if ($super == 6): ?>
