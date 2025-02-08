@@ -152,7 +152,7 @@
 
 									$allorder['pay_qr'] = $allorder['pay_qr'] + $buy_d['pay_qr'];
 									$allorder['pay_delivery'] = $allorder['pay_delivery'] + $pay_delivery;
-									 if ($buy_d['pay_cash'] > 0) $allorder['pay_cash'] = $allorder['pay_cash'] + ($buy_d['pay_cash'] - $pay_delivery);
+									$allorder['pay_cash'] = $allorder['pay_cash'] + ($buy_d['pay_cash'] - $pay_delivery);
 								}
 							?>
 
@@ -211,7 +211,7 @@
 							</div>
 							<div class="hil_headc2s">
 								<span>Кассаға:</span>
-								<p class="fr_price"><?=$allorder['pay_cash']?></p>
+								<p class=""><?=$allorder['pay_cash']?> тг</p>
 							</div>
 						<? endif ?>
 
