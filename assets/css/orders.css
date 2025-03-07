@@ -229,8 +229,6 @@
 .uc_uil2_trt2{
    width: 15%;
    text-align: center;
-   font-weight: 700;
-   font-size: 16px !important;
 }
 .uc_uil2_trt3{
    width: 35%;
@@ -243,7 +241,10 @@
 .uc_uil2_trc .uc_uil2_trt1, .uc_uil2_trc .uc_uil2_trt2, .uc_uil2_trc .uc_uil2_trt3{
    font-size: 14px;
 }
-
+.uc_uil2_trc .uc_uil2_trt2{
+   font-weight: 700;
+   font-size: 16px;
+}
 
 .uc_uil2_trb{
    position: relative;
