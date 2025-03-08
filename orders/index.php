@@ -123,7 +123,7 @@
 												<div class="uc_uil2_mi2"><?=$buy_d['address']?></div>
 											</div>
 											<div class="uc_uil2_mib uc_uil2_mib1">
-												<a class="btn btn_cl" href="https://2gis.ru/shymkent/search/<?=$buy_d['address']?>" target="_blank">Картадан ашу</a>
+												<a class="btn btn_cl" href="https://2gis.kz/shymkent/search/<?=$buy_d['address']?>" target="_blank">Картадан ашу</a>
 											</div>
 										</div>
 									<? endif ?>
@@ -135,7 +135,7 @@
 											</div>
 											<div class="uc_uil2_mib">
 												<a class="btn btn_phone" href="tel:8<?=$buy_d['phone']?>">Званок</a>
-												<a class="btn btn_whatsapp" href="https://wa.me/<?=$buy_d['phone']?>" target="_blank">Whatsapp</a>
+												<a class="btn btn_whatsapp" href="https://wa.me/7<?=$buy_d['phone']?>" target="_blank">Whatsapp</a>
 											</div>
 										</div>
 									<? endif ?>
