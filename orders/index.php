@@ -2,8 +2,6 @@
 
 	// 
 	if (!$user_id) header('location: /');
-	if ($user_right['positions_id'] == 1 || $user_right['positions_id'] == 2 || $user_right['positions_id'] == 3) header('location: /orders/list.php');
-
 
    	$type = @$_GET['type'];
    	$sort = 'new'; 
@@ -157,8 +155,30 @@
 							?>
 
 						<? endwhile ?>
-					<? else: ?> <div class="ds_nr"><i class="fal fa-smoking"></i><p>демалыс</p></div> <? endif ?>
-				<? else: ?> <div class="ds_nr"><i class="fal fa-smoking"></i><p>демалыс</p></div> <? endif ?>
+					<? else: ?>
+						<? if ($user_right['gif']): ?> 
+							<div class="ds_nr ds_nr2">
+								<div class="ds_nr_img lazy_img" data-src="/assets/img/bag/<?=$user_right['gif']?>"></div>
+							</div>
+						<? else: ?>
+							<div class="ds_nr ds_nr2">
+								<i class="fal fa-smoking"></i>
+								<p>демалыс</p>
+							</div>
+						<? endif ?>
+					<? endif ?>
+				<? else: ?>
+					<? if ($user_right['gif']): ?> 
+						<div class="ds_nr ds_nr2">
+							<div class="ds_nr_img lazy_img" data-src="/assets/img/bag/<?=$user_right['gif']?>"></div>
+						</div>
+					<? else: ?>
+						<div class="ds_nr ds_nr2">
+							<i class="fal fa-smoking"></i>
+							<p>демалыс</p>
+						</div>
+					<? endif ?>
+				<? endif ?>
 
 			</div>
 

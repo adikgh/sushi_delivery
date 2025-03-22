@@ -28,6 +28,17 @@
 }
 
 
+.ds_nr2{
+	height: auto;
+}
+.ds_nr_img{
+	width: 100%;
+	padding-bottom: 80%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
 
 /* Просто керек болып калу мумкын */
 .coursls_i_rg{
