@@ -2,6 +2,8 @@
 
 	// 
 	if (!$user_id) header('location: /');
+	if ($user['password'] == '123456') header('location: /pass.php');
+
 
    	$type = @$_GET['type'];
    	$sort = 'new'; 

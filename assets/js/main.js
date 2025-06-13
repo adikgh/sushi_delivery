@@ -120,8 +120,34 @@ $(document).ready(function() {
 
 
 
+	// pass ubd
+	$('.btn_pass_ubd').click(function () { 
+		this_btn = $(this)
+		pass1 = $('.password_new1')
+		pass2 = $('.password_new2')
 
-
+		if (pass1.attr('data-sel') || pass2.attr('data-sel')){
+			if (pass1.val() == pass2.val() && pass2.val() != '123456') {
+				$.ajax({
+					url: "/get.php?ubd_pass",
+					type: "POST",
+					dataType: "html",
+					data: ({
+						pass: pass1.val()
+					}),
+					beforeSend: function(){},
+					error: function(data){console.log(data)},
+					success: function(data){
+						if (data == 'yes') {
+							mess('Cәтті сақталды!')
+							location.reload();
+						}
+						else console.log(data);
+					},
+				})
+			} else mess('Форманы толтырыңыз')
+		} else mess('Форманы толтырыңыз')
+	})
 
 
 
@@ -178,6 +204,9 @@ $(document).ready(function() {
 			})
 		}
 	})
+
+
+	
 	
 	
 	

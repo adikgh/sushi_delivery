@@ -62,8 +62,8 @@
 
 
    // setting
-   $site = mysqli_fetch_array(db::query("select * from `site` where id = 1"));
-   $ver = 1.063;
+   $site = mysqli_fetch_array(db::query("select * from `site` where id = 4"));
+   $ver = 1.065;
 
    // 
    $site_set = [
@@ -83,7 +83,7 @@
 
 
    // lang
-   $lang = 'ru';
+   $lang = 'kz';
    if (isset($_GET['lang'])) if ($_GET['lang'] == 'kz' || $_GET['lang'] == 'ru') $_SESSION['lang'] = $_GET['lang'];
    if (isset($_SESSION['lang'])) $lang = $_SESSION['lang'];
 
@@ -103,7 +103,7 @@
    // }
 
    // lang
-   $super = $user_right['positions_id'];
+   $super = @$user_right['positions_id'];
    // if (isset($_SESSION['super'])) $super = $_SESSION['super'];
 
 

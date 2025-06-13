@@ -1,7 +1,7 @@
 <? include "config/core.php";
 
    // 
-   if ($user_id) header('location: /orders/');
+   	if ($user_id) header('location: /orders/');
 
 
 	// site setting

@@ -1,22 +1,5 @@
 <? include "config/core.php";
 
-	// sign in code
-	// if(isset($_GET['code'])) {
-	// 	$code = strip_tags($_POST['code']);
-	// 	$user_mn = db::query("SELECT * FROM user_management WHERE code = '$code'");
-	// 	if (mysqli_num_rows($user_mn)) {
-	// 		$user_mnd = mysqli_fetch_assoc($user_mn);
-	// 		$id = $user_mnd['user_id'];
-	// 		$user = db::query("SELECT * FROM user WHERE id = '$id'");
-	// 		$user_d = mysqli_fetch_assoc($user);
-	// 		$_SESSION['uph'] = $user_d['phone'];
-	// 		$_SESSION['ups'] = $user_d['password'];
-	// 		echo 'yes';
-	// 	} else echo 'none';
-	// 	exit();
-	// }
-
-
 	// sign in phone
 	if(isset($_GET['sign'])) {
 		$phone = strip_tags($_POST['phone']);
@@ -25,7 +8,7 @@
 		if (mysqli_num_rows($user)) {
 			$user_d = mysqli_fetch_array($user);
 			$user_staff = fun::user_staffw($user_d['id']);
-			if ($user_staff['positions_id'] == 6 || $user_staff['positions_id'] == 3 || $user_staff['positions_id'] == 2 || $user_staff['positions_id'] == 1) {
+			if ($user_staff['positions_id'] == 6) {
 				$_SESSION['uph'] = $phone;
 				$_SESSION['ups'] = $password;
 				setcookie('uph', $phone, time() + 3600*24*30*6, '/');
@@ -37,12 +20,13 @@
 	}
 
 
-
-
-
-
-
-
+	// ubd user
+	if(isset($_GET['ubd_pass'])) {
+		$pass = strip_tags($_POST['pass']);
+		$upd = db::query("UPDATE `user` SET `password`='$pass', `upd_dt`='$datetime' WHERE id = '$user_id'");
+		echo "yes";
+		exit();
+	}
 
 
 
@@ -68,6 +52,5 @@
 		echo "yes";
 		exit();
 	}
-
-
-
+	
+	
